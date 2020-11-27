@@ -8,7 +8,10 @@ ThisBuild / organizationName := "example"
 lazy val root = (project in file("."))
   .settings(
     name := "raspignegna",
-    libraryDependencies += scalaTest % Test
+    libraryDependencies += scalaTest % Test,
+    libraryDependencies += pi4j
   )
+  .enablePlugins(JavaServerAppPackaging)
+  .enablePlugins(UniversalPlugin)
 
 // See https://www.scala-sbt.org/1.x/docs/Using-Sonatype.html for instructions on how to publish to Sonatype.
